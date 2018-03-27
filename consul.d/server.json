@@ -1,0 +1,14 @@
+{
+  "data_dir": "/data/consul/data/",
+  "datacenter": "bj",
+  "log_level": "INFO",
+  "bootstrap_expect": 1,
+  "server": true,
+  "bind_addr": "10.168.99.107",
+  "client_addr": "0.0.0.0",
+  "acl_datacenter": "bj",
+  "acl_master_token": "xxxhelloworldxxx",
+  "acl_default_policy": "deny" ,
+  "acl_token" : "xxxhelloworldxxx",
+  "ui":true
+}
