@@ -1,0 +1,31 @@
+
+./sstableloader -d 10.168.31.66 -t 100 /usr/local/cassandra/apache-cassandra-3.0.14/data/data/tshop/user-b9262b903bc611e88b6d23b746a2a355/
+
+
+
+ES 集群查询
+http://log.kibana.com/app/kibana#/discover?_g=()
+
+
+cassandra consul 注册
+http://10.168.31.66:8500/v1/agent/service/register
+{
+  "ID": "openapi-wan-cassandra-3",
+  "Name": "openapi-wan-cassandra",
+  "Tags": [
+    "primary",
+    "v1"
+  ],
+  "Address": "10.23.43.65",
+  "Port": 9042,
+  "EnableTagOverride": false,
+   "checks": [  
+        {  
+         	"id": "cassandra-wan",  
+            "name": "cassandra-wan",  
+            "tcp": "10.23.43.65:9042",  
+            "interval": "10s",  
+            "timeout": "15s"  
+        }  
+    ]  
+}

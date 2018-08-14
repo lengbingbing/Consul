@@ -1,11 +1,11 @@
 {
   "data_dir": "/data/consul/data/",
-  "datacenter": "bj",
+  "datacenter": "lq",
   "log_level": "INFO",
-  "bind_addr": "10.168.99.108",
+  "bind_addr": "192.168.218.37",
   "client_addr": "0.0.0.0",
-  "retry_join": ["10.168.99.107"],
-  "acl_datacenter": "bj",
-  "acl_token": "241e9ac7-f7ce-4d95-6972-562d2288516f",
+  "retry_join": ["10.23.27.87"],
+  "acl_datacenter": "lq",
+  "acl_token": "366ef886-4162-5e60-1c85-74ab7a944061",
   "ui":true
 }

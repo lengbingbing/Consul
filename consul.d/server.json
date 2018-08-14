@@ -1,14 +1,20 @@
 {
   "data_dir": "/data/consul/data/",
-  "datacenter": "bj",
+  "datacenter": "onlinetest",
   "log_level": "INFO",
   "bootstrap_expect": 1,
   "server": true,
-  "bind_addr": "10.168.99.107",
+  "bind_addr": "192.168.218.34",
   "client_addr": "0.0.0.0",
-  "acl_datacenter": "bj",
-  "acl_master_token": "xxxhelloworldxxx",
+  "acl_datacenter": "onlinetest",
+  "acl_master_token": "autohome-openapi",
   "acl_default_policy": "deny" ,
-  "acl_token" : "xxxhelloworldxxx",
+  "acl_token" : "autohome-openapi",
+  "retry_join": ["192.168.218.34"],
+  "retry_interval": "30s",
+  "rejoin_after_leave": true,
+  "start_join": ["192.168.218.34"],
   "ui":true
+
+
 }

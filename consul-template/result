@@ -1,0 +1,66 @@
+$ vim nginx.conf.ctmpl
+
+  
+upstream consul {
+  zone upstream-consul 64k;
+  server 10.23.27.87:8300 max_fails=3 fail_timeout=60 weight=1;
+  server 10.23.27.89:8300 max_fails=3 fail_timeout=60 weight=1;
+  server 10.23.27.91:8300 max_fails=3 fail_timeout=60 weight=1;
+  
+}   
+upstream uc-user-carownercamp {
+  zone upstream-uc-user-carownercamp 64k;
+  server 10.230.5.150:80 max_fails=3 fail_timeout=60 weight=1;
+  
+}   
+upstream uc-user-configserver {
+  zone upstream-uc-user-configserver 64k;
+  server 10.230.6.147:80 max_fails=3 fail_timeout=60 weight=1;
+  
+}   
+upstream uc-user-userinfo {
+  zone upstream-uc-user-userinfo 64k;
+  server 10.230.4.175:80 max_fails=3 fail_timeout=60 weight=1;
+  
+}   
+upstream uc-usercenter-security {
+  zone upstream-uc-usercenter-security 64k;
+  server 10.230.6.148:80 max_fails=3 fail_timeout=60 weight=1;
+  server 10.230.5.151:80 max_fails=3 fail_timeout=60 weight=1;
+  
+} 
+
+server {
+  listen 80 default_server;
+
+  location / {
+    root /usr/share/nginx/html/;
+    index index.html;
+  }
+
+  location /stub_status {
+    stub_status;
+  }
+
+ 
+  location /consul {
+    proxy_pass http://consul;
+  }
+ 
+  location /uc-user-carownercamp {
+    proxy_pass http://uc-user-carownercamp;
+  }
+ 
+  location /uc-user-configserver {
+    proxy_pass http://uc-user-configserver;
+  }
+ 
+  location /uc-user-userinfo {
+    proxy_pass http://uc-user-userinfo;
+  }
+ 
+  location /uc-usercenter-security {
+    proxy_pass http://uc-usercenter-security;
+  }
+
+}

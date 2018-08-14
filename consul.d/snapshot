@@ -1,0 +1,13 @@
+
+
+
+curl  --request PUT  --data-binary @snapshot http://127.0.0.1:8500/v1/snapshot?dc=lq
+   
+   
+curl http://127.0.0.1:8500/v1/snapshot?dc=lq -o snapshot.tgz
+
+
+curl \
+    --request PUT \
+    --data-binary @snapshot.tgz \
+    http://127.0.0.1:8500/v1/snapshot

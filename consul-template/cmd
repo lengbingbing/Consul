@@ -1,0 +1,1 @@
+consul-template -consul-addr 127.0.0.1:8500 -template "config.ctmpl:result" -once
