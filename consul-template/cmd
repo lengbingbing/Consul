@@ -2,3 +2,14 @@ consul-template -consul-addr 127.0.0.1:8500 -template "config.ctmpl:result" -onc
 
 onsul-template -template "/usr/local/job/in.tpl:/usr/local/job/server.conf:/usr/local/job/safety.sh"  -consul-addr 10.168.100.164:8500 -once
 consul-template -template "/usr/local/job/in.tpl:/usr/local/job/server.conf:/usr/local/job/safety.sh"  -consul-addr 10.168.100.164:8500 -once
+
+
+
+根据配置生成，nginx 配置文件
+consul-template -template "/usr/local/job/genrateServer.tpl:/usr/local/job/nginxServer.conf"  -consul-addr 10.168.100.164:8500
+
+
+参考
+https://www.jianshu.com/p/a4bcc8e36617
+
+
