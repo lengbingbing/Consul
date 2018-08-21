@@ -27,7 +27,7 @@ http{
                 '"$status" $body_bytes_sent "$http_referer" '
                 '"$http_user_agent" "$http_x_forwarded_for" "$host" "$upstream_addr" $http_host';
     underscores_in_headers on;
-    access_log  /data/kong/nginx/access.log  main ;
+    access_log  /data/bigdata/kong/nginx/access.log  main ;
 
 {{ range tree "uc/openapi/config/domain/"}}
 
